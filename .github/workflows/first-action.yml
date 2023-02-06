@@ -5,8 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build Docker Image
+        working-directory: first-action
         run: |
           echo "Build python image"
-          docker build -t filetypeupdate:0.1.0 .
+          # docker build -t filetypeupdate:0.1.0 .
+          ls -la 
+          pwd
       - name: Update Lambda Function
         run: echo "Done, bye!"
