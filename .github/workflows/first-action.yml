@@ -7,10 +7,11 @@ jobs:
       - name: Get Code
         uses: actions/checkout@v3
       - name: Build Docker Image
+        working-directory: filetype
         run: |
           echo "Build python image"
           # docker build -t filetypeupdate:0.1.0 .
-          ls -la ../
+          ls -la 
           pwd
       - name: Update Lambda Function
         run: echo "Done, bye!"
