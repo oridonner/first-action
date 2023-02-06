@@ -4,6 +4,8 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Get Code
+        uses: actions/checkout@v3
       - name: Build Docker Image
         run: |
           echo "Build python image"
