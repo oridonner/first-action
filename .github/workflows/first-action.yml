@@ -4,9 +4,9 @@ jobs:
   first-job:
     runs-on: ubuntu-latest
     steps:
-      - name: Print greeting
+      - name: Build Docker Image
         run: |
-          echo "First action"
-          echo "Second action"
-      - name: Print goodbye
+          echo "Build python image"
+          docker build -t filetypeupdate:0.1.0 .
+      - name: Update Lambda Function
         run: echo "Done, bye!"
