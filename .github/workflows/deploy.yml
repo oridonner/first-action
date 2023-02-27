@@ -1,7 +1,7 @@
 name: Deploy
 on: workflow_dispatch
 jobs:
-  first-job:
+  build-image:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
