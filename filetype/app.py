@@ -33,6 +33,8 @@ def handler(event, context):
     S3 bucket: {1}
     file type:{2}
     """.format(key, bucket, kind.extension)
+    
+    
     em = EmailMessage()
     em['From'] = email_sender
     em['To'] = email_receiver
