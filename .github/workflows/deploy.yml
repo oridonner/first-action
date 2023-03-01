@@ -26,5 +26,5 @@ jobs:
           REPOSITORY: lambda-function
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -f filetype/Dockerfile
+          docker build . -t $REGISTRY/$REPOSITORY:$IMAGE_TAG -f filetype/Dockerfile
           docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
