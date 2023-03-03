@@ -1,7 +1,8 @@
 name: Build and Upload Image
 on: 
   push:
-    branches: [ main ]
+    branches:  
+       - main
 jobs:
   build-image:
     runs-on: ubuntu-latest
