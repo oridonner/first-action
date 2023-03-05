@@ -6,6 +6,9 @@ on:
 jobs:
   terraform-deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: terraform
     steps:
       - name: Get Code
         uses: actions/checkout@v3
