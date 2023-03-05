@@ -22,7 +22,7 @@ jobs:
           # aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           # aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-to-assume: arn:aws:iam::736961895477:role/githubAccess
-          role-session-name: github-action- access
+          role-session-name: github
           aws-region: eu-west-2
           
       - name: Setrup Terraform
