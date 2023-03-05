@@ -1,20 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-    }
-    random = {
-      source = "hashicorp/random"
-    }
-  }
-
-  backend "remote" {
-    organization = "oridonner"
-    workspaces {
-      name = "filetype"
-    }
-  }
-}
 # Creating Lambda IAM resource
 resource "aws_iam_role" "lambda_iam" {
   name = "filetype_lambda_function_role"
@@ -70,9 +53,6 @@ module "lambda_function_container_image" {
   }
 }
 
-provider "aws" {
-  region = "eu-west-2"
-}
 
 # Adding S3 bucket as trigger to my lambda and giving the permissions
 resource "aws_s3_bucket_notification" "aws-lambda-trigger" {
