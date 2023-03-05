@@ -16,7 +16,7 @@ def handler(event, context):
     # get the bucket and file name
     bucket = event['Records'][0]['s3']['bucket']['name']
     key = event['Records'][0]['s3']['object']['key']
-
+    print(event)
     # get object
     response = s3Client.get_object(Bucket=bucket, Key=key)
     
@@ -29,11 +29,10 @@ def handler(event, context):
     # send email with requested data   
     subject = 'file upload update'
     body = """
-    file name: {0}
-    S3 bucket: {1}
-    file type:{2}
+    Uploaded file name is: {0}
+    Uploaded file type is: {2}
+    Uploaded to S3 bucket: {1}
     """.format(key, bucket, kind.extension)
-    
     
     em = EmailMessage()
     em['From'] = email_sender
