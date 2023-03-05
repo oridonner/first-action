@@ -1,15 +1,21 @@
-name: use terraform 
+name: Second Workflow
 on:
   push:
     branches: 
-      - main
+      - main 
 jobs:
-  terraform:
-    runs-on: ubnutu-latest
+  first-job:
+    runs-on: ubuntu-latest
     steps:
       - name: Get Code
         uses: actions/checkout@v3
       - name: Docker Login
         run: aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 736961895477.dkr.ecr.eu-west-2.amazonaws.com
-
+      - name: Build Docker Image
+        working-directory: filetype
+        run: docker build -t lambda-filetype-function:${{ github.run_number }} .
+      - name: Tag Docker Image
+        run: docker tag lambda-filetype-function:${{ github.run_number }} 736961895477.dkr.ecr.eu-west-2.amazonaws.com/lambda-function:${{ github.run_number }}
+      - name: Docker Push Image
+        run: docker push 736961895477.dkr.ecr.eu-west-2.amazonaws.com/lambda-function:${{ github.run_number }}
 
