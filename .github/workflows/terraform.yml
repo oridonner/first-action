@@ -7,7 +7,9 @@ jobs:
   terraform:
     runs-on: ubnutu-latest
     steps:
-      - name: Checkout
+      - name: Get Code
         uses: actions/checkout@v3
+      - name: Docker Login
+        run: aws ecr get-login-password --region eu-west-2 | docker login --username AWS --password-stdin 736961895477.dkr.ecr.eu-west-2.amazonaws.com
 
 
