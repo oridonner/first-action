@@ -70,6 +70,9 @@ module "lambda_function_container_image" {
   }
 }
 
+provider "aws" {
+  region = "eu-west-2"
+}
 
 # Adding S3 bucket as trigger to my lambda and giving the permissions
 resource "aws_s3_bucket_notification" "aws-lambda-trigger" {
