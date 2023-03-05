@@ -1,3 +1,11 @@
+terraform {
+     required_version = ">= 0.12.24"
+     backend "s3" {
+          bucket = s3-filetype-terraform-backend
+          key = terraform.tfstate
+          region = eu-west-2
+     }
+}
 provider "aws" {
      region = "eu-west-2"
      access_key  = "AKIA2XFS2DQ2YVDECIEA"
