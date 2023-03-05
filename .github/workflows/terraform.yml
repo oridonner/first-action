@@ -4,7 +4,7 @@ on:
     branches: 
       - main 
 jobs:
-  first-job:
+  terraform-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -25,3 +25,8 @@ jobs:
       - name: Terraform Format
         id: fmt
         run: terraform fmt -check
+
+      - name: Terraform init
+        id: init
+        run: terraform init
+
