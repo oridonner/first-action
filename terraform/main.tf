@@ -1,11 +1,7 @@
-# provider "aws" {
-#     region = "eu-west-2"
-#     access_key  = "AKIA2XFS2DQ2YVDECIEA"
-#     secret_key = "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"
-# }
-
 provider "aws" {
-    profile = "default"
+     region = "eu-west-2"
+     access_key  = "AKIA2XFS2DQ2YVDECIEA"
+     secret_key = "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"
 }
 
 # Creating Lambda IAM resource
