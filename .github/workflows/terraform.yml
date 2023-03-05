@@ -5,7 +5,6 @@ on:
       - main
 jobs:
   terraform:
-    name: "Terraform"
     runs-on: ubnutu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
